@@ -1,0 +1,38 @@
+<script setup lang="ts">
+import { useRouter } from "vue-router";
+
+const {
+  bankAccessId,
+  bankAccountId,
+  transactionId
+} = defineProps<{
+  bankAccessId: string,
+  bankAccountId: string,
+  transactionId: string
+}>();
+
+const router = useRouter();
+
+async function onEmitError(e: CustomEvent) {
+  const { status, statusText } = e.detail;
+  if(status === 401 || status === 403) {
+    await router.push({ path: '/login' });
+  }
+  alert(`${status} ${statusText}`);
+}
+
+async function onGoBack(event: CustomEvent) {
+  event.preventDefault();
+  await router.push(`/products/${bankAccessId}/account/${bankAccountId}`);
+}
+</script>
+
+<template>
+  <ba-account-transaction-detail
+    :bankAccessId="bankAccessId"
+    :bankAccountId="bankAccountId"
+    :transactionId="transactionId"
+    @emitError="onEmitError"
+    @goBack="onGoBack"
+  />
+</template>
