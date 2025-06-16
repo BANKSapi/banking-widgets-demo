@@ -9,6 +9,8 @@ defineProps<{
 
 const router = useRouter();
 
+const token = localStorage.getItem('ba-token');
+
 async function onEmitError(e: CustomEvent) {
   const { status, statusText } = e.detail;
   if(status === 401 || status === 403) {
@@ -20,6 +22,7 @@ async function onEmitError(e: CustomEvent) {
 
 <template>
   <ba-depot-investment-detail
+    :token="token"
     :bankAccessId="bankAccessId"
     :depotId="depotId"
     :investmentId="investmentId"

@@ -6,6 +6,8 @@ const route = useRoute();
 
 const refresh = route.query.refresh === 'true';
 
+const token = localStorage.getItem('ba-token');
+
 function onOpenBudgetAnalysis() {
   router.push({ path: '/budget-analysis' });
 }
@@ -39,6 +41,7 @@ async function onManageBankAccess() {
 
 <template>
   <ba-product-list
+    :token="token"
     :refresh="refresh"
     @openProduct="onOpenProduct"
     @openBudgetAnalysis="onOpenBudgetAnalysis"

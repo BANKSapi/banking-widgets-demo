@@ -7,7 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/products',
+      redirect: '/login',
     },
     {
       path: '/bam',
@@ -61,6 +61,10 @@ const router = createRouter({
       path: '/budget-analysis/category/:category/transactions',
       component: () => import('../views/BudgetAnalysisCategoryTransactions.vue'),
       props: true
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/login',
     }
   ],
 });

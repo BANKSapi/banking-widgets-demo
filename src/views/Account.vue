@@ -11,6 +11,8 @@ const route = useRoute();
 
 const refresh = route.query.refresh === 'true';
 
+const token = localStorage.getItem('ba-token');
+
 async function onEmitError(e: CustomEvent) {
   const { status, statusText } = e.detail;
   if(status === 401 || status === 403) {
@@ -37,6 +39,7 @@ async function onGoBack(event: CustomEvent) {
 
 <template>
   <ba-account-detail
+    :token="token"
     :refresh="refresh"
     :bankAccessId="bankAccessId"
     :bankAccountId="bankAccountId"

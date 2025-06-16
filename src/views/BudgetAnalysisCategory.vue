@@ -7,6 +7,8 @@ defineProps<{
 
 const router = useRouter();
 
+const token = localStorage.getItem('ba-token');
+
 async function onEmitError(e: CustomEvent) {
   const { status, statusText } = e.detail;
   if(status === 401 || status === 403) {
@@ -23,6 +25,7 @@ async function onOpenCategoryTransactions(e: CustomEvent) {
 
 <template>
   <ba-budget-analysis-parent-category
+    :token="token"
     :parentCategory="category"
     @emitError="onEmitError"
     @openCategoryTransactions="onOpenCategoryTransactions"

@@ -3,6 +3,8 @@ import { useRouter } from "vue-router";
 
 const router = useRouter();
 
+const token = localStorage.getItem('ba-token');
+
 async function onOpenCategory(e: CustomEvent) {
   const { category } = e.detail;
   await router.push(`/budget-analysis/category/${category}`);
@@ -24,6 +26,7 @@ async function onOpenCategoryTransactions(e: CustomEvent) {
 
 <template>
   <ba-budget-analysis
+    :token="token"
     @emitError="onEmitError"
     @openCategoryTransactions="onOpenCategoryTransactions"
     @openCategory="onOpenCategory"
