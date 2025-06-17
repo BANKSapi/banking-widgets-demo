@@ -9,7 +9,6 @@ const form = reactive({
 })
 
 async function provideToken() {
-  console.log(form.token);
   localStorage.setItem('ba-token', form.token);
   await router.push({ path: '/products' });
 }
