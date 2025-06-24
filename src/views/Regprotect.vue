@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRoute, useRouter } from "vue-router";
-import {onBeforeUnmount, onMounted, useTemplateRef} from "vue";
+import {onBeforeUnmount, onMounted } from "vue";
 
 interface RegprotectElement extends HTMLElement {
   sessionLink?: string;
@@ -12,12 +12,19 @@ const sessionLink = route.query.sessionLink as string;
 let wcElement: RegprotectElement | undefined;
 
 function handleWebComponentListener(event: Event) {
-  console.log('[REG/Protect WC event]', event);
   // event.detail will look something like this ->
   // http://localhost:8081/?event=accountCreated&accountId=06f589bd-8d35-494a-8056-2e5d927a3aa3&baReentry=ACCOUNT_CREATED
 
   const callbackUrl = (event as CustomEvent).detail;
-  router.push(`${new URL(callbackUrl).pathname}?refresh=true`);
+  const base = '/banking-widgets-demo/';
+  const targetPath = new URL(callbackUrl).pathname;
+
+// Remove base from path if present
+  const relativePath = targetPath.startsWith(base)
+    ? targetPath.slice(base.length - 1) // preserve the leading slash
+    : targetPath;
+
+  router.push({ path: relativePath });
 }
 
 onMounted(() => {
