@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {useRoute, useRouter} from "vue-router";
+import { useRouter } from "vue-router";
 
 defineProps<{
   bankAccessId: string,
@@ -7,9 +7,6 @@ defineProps<{
 }>();
 
 const router = useRouter();
-const route = useRoute();
-
-const refresh = route.query.refresh === 'true';
 
 const token = localStorage.getItem('ba-token');
 
@@ -40,7 +37,6 @@ async function onGoBack(event: CustomEvent) {
 <template>
   <ba-account-detail
     :token="token"
-    :refresh="refresh"
     :bankAccessId="bankAccessId"
     :bankAccountId="bankAccountId"
     @openTransaction="onOpenTransaction"

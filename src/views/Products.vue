@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { useRoute, useRouter } from "vue-router";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
-const route = useRoute();
-
-const refresh = route.query.refresh === 'true';
 
 const token = localStorage.getItem('ba-token');
 
@@ -42,7 +39,6 @@ async function onManageBankAccess() {
 <template>
   <ba-product-list
     :token="token"
-    :refresh="refresh"
     @openProduct="onOpenProduct"
     @openBudgetAnalysis="onOpenBudgetAnalysis"
     @emitError="onEmitError"

@@ -10,7 +10,7 @@ async function onOpenRegprotect(e: CustomEvent) {
 }
 
 async function onOpenBankingView() {
-  await router.push('/products?refresh=true');
+  await router.push('/products');
 }
 </script>
 
