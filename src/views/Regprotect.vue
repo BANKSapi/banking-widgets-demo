@@ -37,6 +37,8 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   wcElement?.removeEventListener('subscribed', handleWebComponentListener);
+  const container = document.getElementById('regprotect');
+  container?.removeChild(wcElement!);
   wcElement = undefined;
 })
 </script>
