@@ -20,7 +20,7 @@ export default defineConfig({
     vueDevTools()
   ],
   server: {
-    port: 5000,
+    port: 5100,
     host: 'localhost',
   },
   resolve: {
