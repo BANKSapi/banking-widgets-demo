@@ -13,12 +13,32 @@
     <title>WEB/Connect Demo</title>
 
     <style>
+      /* for testing font embedding */
       :root {
-          /* for testing font embedding */
           /*--ba-font-family: Roboto, sans-serif;*/
+      }
 
-          /* for testing font scaling */
-          /*font-size: 28px;*/
+      /* for testing font size and scaling */
+      :root {
+          font-size: 16px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+          /* ===========================
+              Fluid scalable font sizes between min and max font-size
+             =========================== */
+          :root {
+              font-size: 1.25vw;
+          }
+      }
+
+      @media only screen and (min-width: 1920px) {
+          /* ===========================
+              Max font sizes from 1920 layout width onwards
+             =========================== */
+          :root {
+              font-size: 24px;
+          }
       }
     </style>
   </head>
