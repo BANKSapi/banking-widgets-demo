@@ -23,10 +23,6 @@ async function onEmitError(e: CustomEvent) {
   alert(`${status} ${statusText}`);
 }
 
-async function onGoBack(event: CustomEvent) {
-  event.preventDefault();
-  await router.push(`/products/${bankAccessId}/account/${bankAccountId}`);
-}
 </script>
 
 <template>
@@ -36,6 +32,5 @@ async function onGoBack(event: CustomEvent) {
     :bankAccountId="bankAccountId"
     :transactionId="transactionId"
     @emitError="onEmitError"
-    @goBack="onGoBack"
   />
 </template>
