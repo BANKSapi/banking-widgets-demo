@@ -1,2 +1,6 @@
 node_modules
 .idea/
+dist
+public/assets/**
+.claude/
+/capacitor-vue-app/public/assets/

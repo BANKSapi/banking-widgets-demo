@@ -1,0 +1,8 @@
+{
+  "appId": "com.example.bankingwidgets",
+  "appName": "Banking Widgets Demo",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}
