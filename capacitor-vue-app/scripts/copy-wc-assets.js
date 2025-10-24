@@ -3,7 +3,7 @@ import { copyFileSync, mkdirSync, readdirSync, existsSync, statSync, cpSync } fr
 import { join } from 'path';
 
 const sourceDir = 'node_modules/@banksapitechnology/embeddable-finance-web-components/dist';
-const targetDir = 'dist';
+const targetDir = 'dist/assets';
 
 // Create target directory if it doesn't exist
 if (!existsSync(targetDir)) {
