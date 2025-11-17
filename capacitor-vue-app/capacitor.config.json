@@ -3,6 +3,7 @@
   "appName": "Banking Widgets Demo",
   "webDir": "dist",
   "server": {
-    "androidScheme": "https"
+    "androidScheme": "bwd",
+    "iosScheme": "bwd"
   }
 }
