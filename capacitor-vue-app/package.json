@@ -20,9 +20,9 @@
     "cap:run:android": "npm run build && cap sync android && cap run android"
   },
   "dependencies": {
-    "@banksapitechnology/bam-web-component": "1.6.0",
-    "@banksapitechnology/embeddable-finance-web-components": "1.4.0",
-    "@banksapitechnology/regprotect-web-component": "1.6.1",
+    "@banksapitechnology/bam-web-component": "1.8.0",
+    "@banksapitechnology/embeddable-finance-web-components": "1.6.0",
+    "@banksapitechnology/regprotect-web-component": "^1.10.0",
     "@capacitor/android": "7.4.4",
     "@capacitor/app": "7.1.0",
     "@capacitor/cli": "7.4.4",
