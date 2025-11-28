@@ -13,7 +13,7 @@ app.use(router);
 app.mount('#app');
 
 CapacitorApp.addListener('appUrlOpen', function (event: URLOpenListenerEvent) {
-  // Example url: bwd://localhost/regprotect https://demv.de
+  // Example url: bwd://localhost/regprotect?redirect=0.1234
   // slug = /regprotect
   // Extract slug (pathname + search)
   const url = new URL(event.url);
@@ -22,7 +22,7 @@ CapacitorApp.addListener('appUrlOpen', function (event: URLOpenListenerEvent) {
   // We only push to the route if there is a slug present
   if (slug) {
     const queryParams = Object.fromEntries(url.searchParams);
-    console.log('App opened with URL:', slug);
+    console.log('App opened with URL:', slug, queryParams);
     router.push({ path: slug, query: queryParams });
   }
 });

@@ -1,9 +1,5 @@
 {
   "appId": "com.example.bankingwidgets",
   "appName": "Banking Widgets Demo",
-  "webDir": "dist",
-  "server": {
-    "androidScheme": "bwd",
-    "iosScheme": "bwd"
-  }
+  "webDir": "dist"
 }
