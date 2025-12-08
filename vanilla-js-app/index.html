@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.png">
+    <!--link rel="stylesheet" href="/styles.demo.css"-->
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/base.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@banksapitechnology/embeddable-finance-web-components@1.7.0/dist/efc-loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@banksapitechnology/bam-web-component@1.9.0/dist/bam.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@banksapitechnology/regprotect-web-component@1.10.0/dist/ba-regprotect.js"></script>
+
+    <title>WEB/Connect Demo</title>
+
+    <style>
+      /* for testing font embedding */
+      :root {
+          /*--ba-font-family: Roboto, sans-serif;*/
+      }
+
+      :root {
+          font-size: 16px;
+      }
+
+      @media only screen and (min-width: 1280px) {
+          :root {
+              font-size: 1.25vw;
+          }
+      }
+
+      @media only screen and (min-width: 1920px) {
+          :root {
+              font-size: 24px;
+          }
+      }
+
+      #app {
+        min-height: 100vh;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/js/app.js"></script>
+  </body>
+</html>
