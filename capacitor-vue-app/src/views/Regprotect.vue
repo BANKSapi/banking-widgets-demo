@@ -19,7 +19,7 @@ function handleWebComponentListener(event: Event) {
   const base = '/banking-widgets-demo/';
   const targetPath = new URL(callbackUrl).pathname;
 
-// Remove base from path if present
+  // Remove base from path if present
   const relativePath = targetPath.startsWith(base)
     ? targetPath.slice(base.length - 1) // preserve the leading slash
     : targetPath;
