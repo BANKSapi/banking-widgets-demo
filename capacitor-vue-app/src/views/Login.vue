@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref, computed, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 interface LoginForm {
   username: string;
@@ -25,6 +25,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'https://banksapi.io';
 const STORAGE_KEY = 'bwd:login-credentials';
 
 const router = useRouter();
+const route = useRoute();
 
 const form = reactive<LoginForm>({
   username: '',
@@ -70,7 +71,15 @@ const loadSavedCredentials = (): void => {
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
+  // Allow token to be set from URL query parameter
+  const tokenFromUrl = route.query.token as string;
+  if (tokenFromUrl && tokenFromUrl.trim()) {
+    localStorage.setItem('ba-token', tokenFromUrl);
+    await router.replace({ path: '/products' });
+    return;
+  }
+
   loadSavedCredentials();
 });
 
