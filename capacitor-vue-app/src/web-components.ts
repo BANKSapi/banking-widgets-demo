@@ -2,7 +2,7 @@
 // Load the web component scripts directly
 const efcScript = document.createElement('script');
 efcScript.type = 'module';
-efcScript.src = '/assets/embeddable-finance-web-components.esm.js';
+efcScript.src = import.meta.env.BASE_URL + 'assets/embeddable-finance-web-components.esm.js';
 document.head.appendChild(efcScript);
 
 // Import other components as modules

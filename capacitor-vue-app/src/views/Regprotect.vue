@@ -16,7 +16,7 @@ function handleWebComponentListener(event: Event) {
   // http://localhost:8081/?event=accountCreated&accountId=06f589bd-8d35-494a-8056-2e5d927a3aa3&baReentry=ACCOUNT_CREATED
 
   const callbackUrl = (event as CustomEvent).detail;
-  const base = '/banking-widgets-demo/';
+  const base = import.meta.env.BASE_URL;
   const targetPath = new URL(callbackUrl).pathname;
 
   // Remove base from path if present
