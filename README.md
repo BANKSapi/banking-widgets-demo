@@ -16,16 +16,16 @@ This repository demonstrates the implementation of three core BANKSapi libraries
 
 ## Example Applications
 
-### 1. Vue.js Web Application (`/vue-app`)
-A standard Vue.js web application demonstrating the integration of banking widgets in a browser environment.
+### 1. Vanilla JS Web Application (`/vanilla-js-app`)
+A standard Vanilla JS web application demonstrating the integration of banking widgets in a browser environment.
 
 **Features:**
-- Pure Vue.js implementation
+- Pure Vanilla JS implementation
 - Browser-based banking widget integration
 - Event handling and routing examples
 - Token management demonstration
 
-[View Vue App README](./vue-app/README.md)
+[View Vanilla JS App README](./vanilla-js-app/README.md)
 
 ### 2. Capacitor Vue Application (`/capacitor-vue-app`)
 A cross-platform mobile application built with Vue.js and Capacitor, showcasing banking widgets in native iOS and Android apps.
@@ -55,18 +55,20 @@ cd banking-widgets-demo
 
 2. Choose an example application:
 
-**For Vue.js Web App:**
+**For Vanilla JS Web App:**
 ```bash
-cd vue-app
+cd vanila-js-app
 npm ci
 npm run dev
 ```
 
-**For Capacitor Mobile App:**
+**For Capacitor+Vue Web and Mobile App:**
 ```bash
 cd capacitor-vue-app
 npm ci
-npm run cap:run:ios or npm run cap:run:android
+npm run local:dev --> web
+npm run cap:run:ios --> ios
+npm run cap:run:android --> android
 ```
 
 ### Getting Your Token

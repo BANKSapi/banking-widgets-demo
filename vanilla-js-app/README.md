@@ -66,7 +66,7 @@ The production build will be created in the `dist` directory.
 npm run preview
 ```
 
-## Key Differences from Vue Version
+## Key Points
 
 1. **No Framework Dependencies**: This version uses vanilla JavaScript without Vue.js
 2. **Custom Router**: Implements a lightweight custom routing solution
