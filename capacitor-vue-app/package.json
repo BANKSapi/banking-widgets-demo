@@ -22,10 +22,10 @@
   "dependencies": {
     "@banksapitechnology/bam-web-component": "1.9.0",
     "@banksapitechnology/embeddable-finance-web-components": "1.7.0",
-    "@banksapitechnology/regprotect-web-component": "1.10.0",
+    "@banksapitechnology/regprotect-web-component": "1.11.0",
     "@capacitor/android": "7.4.4",
     "@capacitor/app": "7.1.0",
-    "@capacitor/cli": "7.4.4",
+    "@capacitor/cli": "^7.6.0",
     "@capacitor/core": "7.4.4",
     "@capacitor/ios": "7.4.4",
     "vue": "3.5.13",
