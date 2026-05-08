@@ -1,3 +1,4 @@
+import '@/lib/runtime-override-boot';
 import './assets/main.css'
 import './web-components'
 

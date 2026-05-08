@@ -1,6 +1,7 @@
 import router from '../router/router.js';
+import { getOverride } from '../lib/runtime-override.js';
 
-const API_URL = import.meta.env?.VITE_API_URL || 'https://banksapi.io';
+const API_URL = getOverride('apiUrl', import.meta.env?.VITE_API_URL || 'https://banksapi.io');
 const STORAGE_KEY = 'bwd:login-credentials';
 
 export default function Login() {

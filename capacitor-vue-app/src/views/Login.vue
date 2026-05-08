@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref, computed, onMounted } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
+import { getOverride } from '@/lib/runtime-override';
 
 interface LoginForm {
   username: string;
@@ -21,7 +22,7 @@ interface SavedCredentials {
   clientSecret: string;
 }
 
-const API_URL = import.meta.env.VITE_API_URL || 'https://banksapi.io';
+const API_URL = getOverride('apiUrl', import.meta.env.VITE_API_URL || 'https://banksapi.io');
 const STORAGE_KEY = 'bwd:login-credentials';
 
 const router = useRouter();

@@ -1,3 +1,4 @@
+import './lib/runtime-override-boot.js';
 import router from './router/router.js';
 import Login from './views/login.js';
 import Products from './views/products.js';
